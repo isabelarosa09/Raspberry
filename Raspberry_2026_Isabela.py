@@ -1,4 +1,4 @@
-from gpiozero import Motor
+from gpiozero import Motor                     #Todas as bibliotecas usadas.
 from gpiozero import LED
 from gpio_config import factory
 import paho.mqtt.client as mqtt
@@ -27,9 +27,9 @@ motor = Motor(forward=12, backward=16, pin_factory=factory)
 PINO_LED = LED(17, pin_factory=factory)
  
 
-MQTT_BROKER = "broker.hivemq.com"
-MQTT_PORT = 1883
-MQTT_TOPIC = "emc/projeto"
+MQTT_BROKER = "broker.hivemq.com" # Usado o servidor MQTT
+MQTT_PORT = 1883 
+MQTT_TOPIC = "emc/projeto" # Diretório onde ta sendo executado o código
 
 client = mqtt.Client()
 client.connect(MQTT_BROKER, MQTT_PORT, 60)
